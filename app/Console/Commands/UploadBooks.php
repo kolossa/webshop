@@ -42,7 +42,7 @@ class UploadBooks extends Command
 		$book=[];
 		$book['id']=1001;
 		$book['title']='Dreamweaver CS4';
-		$book['authors']=['Janine Warner';]
+		$book['authors']=['Janine Warner'];
 		$book['publisher']='PANEM';
 		$book['price']=3900;
 		
