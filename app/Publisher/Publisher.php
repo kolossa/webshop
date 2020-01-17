@@ -18,5 +18,8 @@ class Publisher extends Model implements \App\IEntity
 		return $this->id;
 	}
 	
-	
+	public function specialPrices(){
+		
+		return $this->belongsToMany('App\SpecialPrice\SpecialPrice', 'special_prices_publishers_assign');
+	}
 }

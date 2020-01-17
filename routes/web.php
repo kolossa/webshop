@@ -14,3 +14,5 @@
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('books/offset/{offset}/limit/{limit}/column/{column}/asc/{asc}', 'GetBooksController');
+Route::get('list-books', 'ListBooksController');

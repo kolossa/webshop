@@ -2,8 +2,6 @@
 
 namespace App\Publisher;
 
-use App\Publisher\Publisher;
-
 class EloquentPublisherRepository implements IPublisherRepository{
 	
 	public function persist(\App\IEntity $entity){
@@ -11,8 +9,9 @@ class EloquentPublisherRepository implements IPublisherRepository{
 		$entity->save();
 	}
 	
-	public function count():int{
+	
+	public function findByName($name){
 		
-		return Publisher::get()->count();
+		return Publisher::where('name', $name)->first();
 	}
 }

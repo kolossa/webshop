@@ -14,12 +14,13 @@ class CreateAuthorsBooksAssignTable extends Migration
     public function up()
     {
         Schema::create('authors_books_assign', function (Blueprint $table) {
-            $table->bigInteger('author_id', false, true);
+            $table->bigIncrements('id');
+			$table->bigInteger('author_id', false, true);
             $table->bigInteger('book_id');
             $table->timestamps();
-			$table->primary(['author_id', 'book_id']);
 			$table->foreign('author_id')->references('id')->on('authors');
 			$table->foreign('book_id')->references('id')->on('books');
+			$table->unique(['book_id', 'author_id']);
         });
     }
 

@@ -14,12 +14,13 @@ class CreateSpecialPricesPublishersAssignTable extends Migration
     public function up()
     {
         Schema::create('special_prices_publishers_assign', function (Blueprint $table) {
-            $table->bigInteger('publisher_id', false, true);
+            $table->bigIncrements('id');
+			$table->bigInteger('publisher_id', false, true);
             $table->bigInteger('special_price_id');
             $table->timestamps();
-			$table->primary(['publisher_id', 'special_price_id'], 'publisher_id_special_price_id_primary');
 			$table->foreign('publisher_id')->references('id')->on('publishers');
 			$table->foreign('special_price_id')->references('id')->on('special_prices');
+			$table->unique(['publisher_id', 'special_price_id'], 'unique_publisher_special_price');
         });
     }
 

@@ -3,6 +3,14 @@
 namespace App\Console\Commands;
 
 use Illuminate\Console\Command;
+use \App\Book\IBookRepository;
+use \App\Book\BookFactory;
+use \App\Publisher\IPublisherRepository;
+use \App\Publisher\PublisherFactory;
+use \App\Publisher\Publisher;
+use \App\Author\IAuthorRepository;
+use \App\Author\AuthorFactory;
+use \App\Author\Author;
 
 class UploadBooks extends Command
 {
@@ -18,16 +26,53 @@ class UploadBooks extends Command
      *
      * @var string
      */
-    protected $description = 'Upload basic books';
+    protected $description = 'Upload basic book test data';
+	
+	/**
+	 * @var IBookRepository $bookRepository
+	 */
+	protected $bookRepository;
+	
+	/**
+	 * @var BookFactory $bookFactory
+	 */
+	protected $bookFactory;
+	
+	/**
+	 * @var IAuthorRepository $authorRepository
+	 */
+	protected $authorRepository;
+	
+	/**
+	 * @var AuthorFactory $authorFactory
+	 */
+	protected $authorFactory;
+	
+	/**
+	 * @var IPublisherRepository $publisherRepository
+	 */
+	protected $publisherRepository;
+	
+	/**
+	 * @var PublisherFactory $publisherFactory
+	 */
+	protected $publisherFactory;
 
     /**
      * Create a new command instance.
      *
      * @return void
      */
-    public function __construct()
+    public function __construct(IBookRepository $bookRepository, BookFactory $bookFactory, IAuthorRepository $authorRepository, AuthorFactory $authorFactory, IPublisherRepository $publisherRepository, PublisherFactory $publisherFactory)
     {
         parent::__construct();
+		
+		$this->bookRepository=$bookRepository;
+		$this->bookFactory=$bookFactory;
+		$this->authorRepository=$authorRepository;
+		$this->authorFactory=$authorFactory;
+		$this->publisherRepository=$publisherRepository;
+		$this->publisherFactory=$publisherFactory;
     }
 
     /**
@@ -35,9 +80,87 @@ class UploadBooks extends Command
      *
      * @return mixed
      */
-    public function handle(\App\Publisher\IBookRepository $repository, \App\Publisher\PublisherFactory $factory)
+    public function handle()
     {
-        $books=[];
+		$this->uploadBooksWithAuthorsAndPublishers();
+		
+    }
+	
+	private function uploadBooksWithAuthorsAndPublishers(){
+		
+		$books=$this->getBooks();
+		
+		$counter=0;
+		
+		foreach($books as $bookAttributes){
+			
+			$book=$this->bookRepository->findByPk($bookAttributes['id']);
+			
+			if($book!=null){
+				continue;
+			}
+			
+			$publisher=$this->findOrCreatePublisher($bookAttributes['publisher']);
+			
+			$book=$this->bookFactory->create();
+			$book->id=$bookAttributes['id'];
+			$book->title=$bookAttributes['title'];
+			$book->price=$bookAttributes['price'];
+			$book->publisher_id=$publisher->id;
+			$this->bookRepository->persist($book);
+			
+			foreach($bookAttributes['authors'] as $authorName){
+				
+				$author=$this->authorRepository->findByName($authorName);
+				if($author==null){
+					$author=$this->authorFactory->create();
+					$author->name=$authorName;
+					$this->authorRepository->persist($author);
+				}
+				$this->bookRepository->assignAuthorToBook($book, $author);
+			}
+			
+			$counter++;
+			
+		}
+		
+		$this->info($counter.' number of book records uploaded.');
+	}
+	
+	private $publishers=[];
+	
+	/**
+	 * Find or create publisher by name.
+	 *
+	 * @param string $name
+	 * @return Publisher
+	 */
+	private function findOrCreatePublisher($name):Publisher{
+		
+		if(isset($this->publishers[$name])){
+				
+			return $this->publishers[$name];
+		}else{
+			
+			$publisher=$this->publisherRepository->findByName($name);
+			
+			if($publisher==null){
+				
+				$publisher=$this->publisherFactory->create();
+				$publisher->name=$name;
+				$this->publisherRepository->persist($publisher);
+			}
+			$this->publishers[$name]=$publisher;
+			return $publisher;
+		}
+	}
+	
+	/**
+	 * Test data from the pdf.
+	 */
+	private function getBooks():array{
+		
+		$books=[];
 		
 		$book=[];
 		$book['id']=1001;
@@ -92,5 +215,7 @@ class UploadBooks extends Command
 		$book['price']=3600;
 		
 		$books[]=$book;
-    }
+		
+		return $books;
+	}
 }

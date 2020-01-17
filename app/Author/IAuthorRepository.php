@@ -1,8 +1,8 @@
 <?php 
 
-namespace App\Publisher;
+namespace App\Author;
 
-interface IPublisherRepository{
+interface IAuthorRepository{
 	
 	public function persist(\App\IEntity $entity);
 	public function findByName($name);

@@ -17,6 +17,18 @@ class AppServiceProvider extends ServiceProvider
             'App\Publisher\IPublisherRepository',
             'App\Publisher\EloquentPublisherRepository'
         );
+		$this->app->bind(
+			'App\Book\IBookRepository',
+            'App\Book\EloquentBookRepository'
+		);
+		$this->app->bind(
+			'App\Author\IAuthorRepository',
+            'App\Author\EloquentAuthorRepository'
+		);
+		$this->app->bind(
+			'App\SpecialPrice\ISpecialPriceRepository',
+            'App\SpecialPrice\EloquentSpecialPriceRepository'
+		);
     }
 
     /**

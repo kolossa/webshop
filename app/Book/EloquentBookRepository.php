@@ -2,7 +2,7 @@
 
 namespace App\Book;
 
-use App\Book\Book;
+use App\Author\Author;
 
 class EloquentBookRepository implements IBookRepository{
 	
@@ -14,5 +14,23 @@ class EloquentBookRepository implements IBookRepository{
 	public function count():int{
 		
 		return Book::get()->count();
+	}
+	
+	public function assignAuthorToBook(Book $book, Author $author){
+		
+		$book->authors()->attach($author->id);
+	}
+	
+	public function findByPk($id){
+		
+		return Book::find($id);
+	}
+	
+	public function findAllWithPublisherAndAuthors($offset, $limit, $order, $asc=true){
+		
+		return Book::with(['publisher.specialPrices', 'authors', 'specialPrices'])->orderBy($order, $asc ? 'asc' : 'desc')
+			->offset($offset)
+            ->limit($limit)
+			->get();
 	}
 }
