@@ -153,7 +153,7 @@
       <option name="presentableId" value="Default" />
       <updated>1579339024576</updated>
       <workItem from="1579339040014" duration="930000" />
-      <workItem from="1579340142425" duration="15015000" />
+      <workItem from="1579340142425" duration="25113000" />
     </task>
     <servers />
   </component>
@@ -171,22 +171,26 @@
     </option>
   </component>
   <component name="WindowStateProjectService">
-    <state x="224" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1579357958905">
+    <state x="1011" y="247" key="#com.intellij.ide.util.MemberChooser" timestamp="1579360619230">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="224" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1579357958905" />
-    <state x="690" y="274" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1579359198214">
+    <state x="1011" y="247" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1579360619230" />
+    <state x="224" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1579364263849">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="690" y="274" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1579359198214" />
+    <state x="224" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1579364263849" />
+    <state x="690" y="274" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1579370880621">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="690" y="274" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1579370880621" />
     <state x="740" y="274" key="FileChooserDialogImpl" timestamp="1579343874574">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="740" y="274" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1579343874574" />
-    <state x="740" y="333" key="NewPhpClassDialog" timestamp="1579358449164">
+    <state x="740" y="333" key="NewPhpClassDialog" timestamp="1579370391987">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="740" y="333" key="NewPhpClassDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1579358449164" />
+    <state x="740" y="333" key="NewPhpClassDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1579370391987" />
     <state x="461" y="151" key="SettingsEditor" timestamp="1579343898756">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

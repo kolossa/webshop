@@ -12,14 +12,14 @@ class Publisher extends Model implements \App\IEntity
      * @var string
      */
     protected $table = 'publishers';
-	
+
 	public function getId(){
-		
+
 		return $this->id;
 	}
-	
-	public function specialPrices(){
-		
-		return $this->belongsToMany('App\SpecialPrice\SpecialPrice', 'special_prices_publishers_assign');
+
+	public function discounts(){
+
+		return $this->belongsToMany('App\Discount\Discount', 'discounts_publishers_assign');
 	}
 }

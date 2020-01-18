@@ -3,6 +3,7 @@
 namespace App\Console\Commands;
 
 use App\Discount\DiscountFactory;
+use App\Discount\DiscountType;
 use App\Discount\IDiscountRepository;
 use Illuminate\Console\Command;
 use \App\Discount\IDiscountTypeRepository;
@@ -183,8 +184,8 @@ class UploadDiscounts extends Command
 
         $discountAttributes = [];
         $discountAttributes['id'] = 101;
-        $discountAttributes['type'] = 'percentage';
-        $discountAttributes['amounts'] = [10];
+        $discountAttributes['type'] = DiscountType::TYPE_PERCENTAGE;
+        $discountAttributes['amounts'] = [0.1];
         $discountAttributes['description'] = '%-os kedvezmény a termék árából';
         $discountAttributes['books'] = [1006];
 
@@ -192,7 +193,7 @@ class UploadDiscounts extends Command
 
         $discountAttributes = [];
         $discountAttributes['id'] = 102;
-        $discountAttributes['type'] = 'fix';
+        $discountAttributes['type'] = DiscountType::TYPE_FIX;
         $discountAttributes['amounts'] = [500];
         $discountAttributes['description'] = 'termék, fix ár kedvezmény a termék árából';
         $discountAttributes['books'] = [1002];
@@ -201,11 +202,11 @@ class UploadDiscounts extends Command
 
         $discountAttributes = [];
         $discountAttributes['id'] = 103;
-        $discountAttributes['type'] = 'package';
+        $discountAttributes['type'] = DiscountType::TYPE_PACKAGE;
         $discountAttributes['amounts'] = [2, 1];
         $discountAttributes['description'] = 'X+Y csomag kedvezmény (a szettben szereplő legolcsóbb termék %-os kedvezményt kap)';
         $discountAttributes['publishers'] = ['PANEM'];
-        $discountAttributes['relations'][] = ['discount_type_id' => 101, 'amounts' => [100]];
+        $discountAttributes['relations'][] = ['discount_type_id' => 101, 'amounts' => [1]];
 
         $discounts[] = $discountAttributes;
 
