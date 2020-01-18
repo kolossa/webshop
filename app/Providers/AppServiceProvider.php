@@ -26,8 +26,12 @@ class AppServiceProvider extends ServiceProvider
             'App\Author\EloquentAuthorRepository'
 		);
 		$this->app->bind(
-			'App\SpecialPrice\ISpecialPriceRepository',
-            'App\SpecialPrice\EloquentSpecialPriceRepository'
+			'App\Discount\IDiscountTypeRepository',
+            'App\Discount\EloquentDiscountTypeRepository'
+		);
+		$this->app->bind(
+			'App\Discount\IDiscountRepository',
+            'App\Discount\EloquentDiscountRepository'
 		);
     }
 

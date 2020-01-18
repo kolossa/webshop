@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateSpecialPricesTable extends Migration
+class CreateDiscountTypesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,13 @@ class CreateSpecialPricesTable extends Migration
      */
     public function up()
     {
-        Schema::create('special_prices', function (Blueprint $table) {
+        Schema::create('discount_types', function (Blueprint $table) {
             $table->bigInteger('id');
+			$table->string('type');
 			$table->string('description');
             $table->timestamps();
 			$table->primary('id');
+			$table->index('type');
         });
     }
 
@@ -28,6 +30,6 @@ class CreateSpecialPricesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('special_prices');
+        Schema::dropIfExists('discount_types');
     }
 }

@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateSpecialPricesBooksAssignTable extends Migration
+class CreateDiscountsBooksAssignTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,14 +13,14 @@ class CreateSpecialPricesBooksAssignTable extends Migration
      */
     public function up()
     {
-        Schema::create('special_prices_books_assign', function (Blueprint $table) {
+        Schema::create('discounts_books_assign', function (Blueprint $table) {
             $table->bigIncrements('id');
 			$table->bigInteger('book_id');
-            $table->bigInteger('special_price_id');
+            $table->bigInteger('discount_id')->unsigned();
             $table->timestamps();
 			$table->foreign('book_id')->references('id')->on('books');
-			$table->foreign('special_price_id')->references('id')->on('special_prices');
-			$table->unique(['book_id', 'special_price_id']);
+			$table->foreign('discount_id')->references('id')->on('discounts');
+			$table->unique(['book_id', 'discount_id']);
         });
     }
 
@@ -31,6 +31,6 @@ class CreateSpecialPricesBooksAssignTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('special_prices_books_assign');
+        Schema::dropIfExists('discounts_books_assign');
     }
 }
