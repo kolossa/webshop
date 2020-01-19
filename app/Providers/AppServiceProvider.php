@@ -33,6 +33,10 @@ class AppServiceProvider extends ServiceProvider
 			'App\Discount\IDiscountRepository',
             'App\Discount\EloquentDiscountRepository'
 		);
+		$this->app->bind(
+			'App\Cart\ICartRepository',
+            'App\Cart\EloquentCartRepository'
+		);
     }
 
     /**

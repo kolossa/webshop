@@ -14,50 +14,54 @@ class DiscountRulePackage
      * $discount->amount1 in this case is the minimum amount of books of the specific publisher,
      * $discount->amount2 in this case is the number of cheapest book which will be free.
      *
-     * @param Publisher $publisher
      * @param Book[] $books
      * @param Discount $discount
      * @param Discount[] $relatedDiscounts
      * @return int
      */
-    public function getSpecialPrice(Publisher $publisher, array $books, Discount $discount, array $relatedDiscounts)
+    public function getDiscountPrice(array $books, Discount $discount,  $relatedDiscounts)
     {
+        $discountPrice = 0;
+        $numberOfDiscount = count($books) / $discount->amount1;
+        $numberOfDiscount = floor($numberOfDiscount);
 
-        $publisherBooks = [];
-        foreach ($books as $book) {
+        if ($numberOfDiscount > 0) {
 
-            if ($book->publisher_id == $publisher->id) {
-                $publisherBooks[] = $book;
-            }
-        }
-
-        if (count($publisherBooks) >= $discount->amount1 + $discount->amount2) {
-
-            usort($publisherBooks, function (Book $book1, Book $book2) {
+            usort($books, function (Book $book1, Book $book2) {
                 if ($book1->price == $book2->price) {
                     return 0;
                 }
-                return ($book1->price < $book2->price) ? -1 : 1;
+                return ($book1->price > $book2->price) ? -1 : 1;
             });
+        }
 
-            $specialPrice = 0;
-            for ($i = 1; $i <= $discount->amount2; $i++) {
-                $book = array_shift($publisherBooks);
+        while ($numberOfDiscount-- > 0) {
+
+            for ($j = 1; $j <= $discount->amount1; $j++) {
+
+                if (count($books) == 0) {
+                    break;
+                }
+
+                array_shift($books);
+            }
+            for ($k = 1; $k <= $discount->amount2; $k++) {
+
+                if (count($books) == 0) {
+                    break;
+                }
+
+                $book = array_pop($books);
 
                 foreach ($relatedDiscounts as $relatedDiscount) {
 
-                    $discountType = $relatedDiscount->discountType();
+                    $discountType = $relatedDiscount->discountType;
                     $rule = $discountType->getDiscountRule();
-                    $rule->getSpecialPrice();
-                    $specialPrice += $book->price;
+                    $bookDiscountPrice = $rule->getDiscountPrice($book, $relatedDiscount);
+                    $discountPrice+=$bookDiscountPrice;
                 }
-
             }
-
-            return $specialPrice;
         }
-
-
-        return 0;
+        return $discountPrice;
     }
 }

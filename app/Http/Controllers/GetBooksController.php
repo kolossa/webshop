@@ -9,20 +9,20 @@ use \App\Book\IBookRepository;
 class GetBooksController extends Controller
 {
 
-	/**
-	 * @var IBookRepository $bookRepository
-	 */
-	protected $bookRepository;
+    /**
+     * @var IBookRepository $bookRepository
+     */
+    protected $bookRepository;
 
     /**
      * @var BookPriceService $bookPriceService
      */
-	protected $bookPriceService;
+    protected $bookPriceService;
 
-	public function __construct(IBookRepository $bookRepository, BookPriceService $bookPriceService)
+    public function __construct(IBookRepository $bookRepository, BookPriceService $bookPriceService)
     {
-        $this->bookRepository=$bookRepository;
-        $this->bookPriceService=$bookPriceService;
+        $this->bookRepository = $bookRepository;
+        $this->bookPriceService = $bookPriceService;
     }
 
     /**
@@ -32,23 +32,24 @@ class GetBooksController extends Controller
      */
     public function __invoke($offset, $limit, $column, $asc)
     {
-        $result=[];
+        $result = [];
 
-        $books= $this->bookRepository->findAllWithPublisherAndAuthors((int)$offset, (int)$limit, $column, (bool)$asc);
+        $books = $this->bookRepository->findAllWithPublisherAndAuthors((int)$offset, (int)$limit, $column, (bool)$asc);
 
-        foreach ($books as $book){
-            $specialPrice=$this->bookPriceService->getSpecialPrice($book);
-            $bookAttributes=[];
-            $bookAttributes['publisher']=$book->publisher->name;
-            $bookAttributes['authors']=[];
-            foreach ($book->authors as $author){
-                $bookAttributes['authors'][]=$author->name;
+        foreach ($books as $book) {
+            $specialPrice = $this->bookPriceService->getSpecialPrice($book);
+            $bookAttributes = [];
+            $bookAttributes['id'] = $book->id;
+            $bookAttributes['publisher'] = $book->publisher->name;
+            $bookAttributes['authors'] = [];
+            foreach ($book->authors as $author) {
+                $bookAttributes['authors'][] = $author->name;
             }
-            $bookAttributes['title']=$book->title;
-            $bookAttributes['catalogPrice']=$book->price;
-            $bookAttributes['specialPrice']=$specialPrice;
+            $bookAttributes['title'] = $book->title;
+            $bookAttributes['catalogPrice'] = $book->price;
+            $bookAttributes['specialPrice'] = $specialPrice;
 
-            $result[]=$bookAttributes;
+            $result[] = $bookAttributes;
         }
 
         return $result;
