@@ -44,21 +44,15 @@ class CartPriceService
 
         foreach ($publishers as $publisher) {
             $discounts = $publisher->discounts;
-            foreach ($discounts as $discount) {
-                $publisherDiscounts[$publisher->id][$discount->id] = $discount;
-            }
-        }
-
-        foreach ($publisherDiscounts as $publisherId => $discounts) {
-
-            foreach ($discounts as $discount) {
-
-                $discountType = $discount->discountType;
+            
+			foreach ($discounts as $discount) {
+                
+				$discountType = $discount->discountType;
                 $rule = $discountType->getDiscountRule();
                 if ($discountType->type == DiscountType::TYPE_PACKAGE) {
-                    $specialPrice -= $rule->getDiscountPrice($booksByPublisherId[$publisherId], $discount, $discount->relatedDiscounts);
+                    $specialPrice -= $rule->getDiscountPrice($booksByPublisherId[$publisher->id], $discount, $discount->relatedDiscounts);
                 } else {
-                    foreach ($booksByPublisherId[$publisherId] as $book) {
+                    foreach ($booksByPublisherId[$publisher->id] as $book) {
                         $specialPrice -= $rule->getDiscountPrice($book, $discount);
                     }
                 }
