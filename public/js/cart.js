@@ -60,6 +60,7 @@ function getCart() {
                                     success: function (msg) {
                                         $(".msg").html(msg.msg);
                                         $("#book_" + value.id).remove();
+                                        getCart();
                                     }
                                 })
                             }
@@ -74,7 +75,7 @@ function getCart() {
                 });
             }
         }
-    })
+    });
 };
 
 $(document).ready(function () {
