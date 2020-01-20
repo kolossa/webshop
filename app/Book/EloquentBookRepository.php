@@ -3,34 +3,47 @@
 namespace App\Book;
 
 use App\Author\Author;
+use App\Publisher\Publisher;
 
-class EloquentBookRepository implements IBookRepository{
+class EloquentBookRepository implements IBookRepository
+{
 
-	public function persist(\App\IEntity $entity){
+    public function persist(\App\IEntity $entity)
+    {
 
-		$entity->save();
-	}
+        $entity->save();
+    }
 
-	public function count():int{
+    public function count(): int
+    {
 
-		return Book::get()->count();
-	}
+        return Book::get()->count();
+    }
 
-	public function assignAuthorToBook(Book $book, Author $author){
+    public function assignAuthorToBook(Book $book, Author $author)
+    {
 
-		$book->authors()->attach($author->id);
-	}
+        $book->authors()->attach($author->id);
+    }
 
-	public function findByPk($id){
+    public function findByPk($id)
+    {
 
-		return Book::find($id);
-	}
+        return Book::find($id);
+    }
 
-	public function findAllWithPublisherAndAuthors($offset, $limit, $order, $asc=true){
+    public function findAllWithPublisherAndAuthors($offset, $limit, $order, $asc = true)
+    {
 
-		return Book::with(['publisher.discounts.relatedDiscounts', 'authors', 'discounts.relatedDiscounts'])->orderBy($order, $asc ? 'asc' : 'desc')
-			->offset($offset)
+        return Book::with(['publisher.discounts.relatedDiscounts', 'authors', 'discounts.relatedDiscounts'])
+            ->orderBy($order, $asc ? 'asc' : 'desc')
+            ->offset($offset)
             ->limit($limit)
-			->get();
-	}
+            ->get();
+    }
+
+    public function getPublisher(Book $book)
+    {
+        return Publisher::where('id', $book->publisher_id)->first();
+    }
 }

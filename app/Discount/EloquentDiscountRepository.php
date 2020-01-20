@@ -31,4 +31,39 @@ class EloquentDiscountRepository implements IDiscountRepository
 
         $discount->relatedDiscounts()->attach($relatedDiscount->id);
     }
+
+    public function findAllByBook(Book $book)
+    {
+
+        return Discount::select('discounts.*')
+            ->join(Discount::TABLE_BOOKS_ASSIGN, 'discounts.id', '=', 'discount_id')
+            ->where(Discount::TABLE_BOOKS_ASSIGN . '.book_id', $book->id)
+            ->get();
+    }
+
+    public function findAllByPublisher(Publisher $publisher)
+    {
+
+        return Discount::select('discounts.*')
+            ->join(Discount::TABLE_PUBLISHERS_ASSIGN, 'discounts.id', '=', 'discount_id')
+            ->where(Discount::TABLE_PUBLISHERS_ASSIGN . '.publisher_id', $publisher->id)
+            ->get();
+    }
+
+    /**
+     * @inheritDoc
+     */
+    public function getDiscountType(Discount $discount)
+    {
+
+        return DiscountType::where('id', $discount->discount_type_id)->first();
+    }
+
+    public function getRelatedDiscounts(Discount $discount)
+    {
+        return Discount::select('discounts.*')
+            ->join(Discount::TABLE_DISCOUNTS_ASSIGN, 'discounts.id', '=', 'related_discount_id')
+            ->where(Discount::TABLE_DISCOUNTS_ASSIGN . '.discount_id', $discount->id)
+            ->get();
+    }
 }

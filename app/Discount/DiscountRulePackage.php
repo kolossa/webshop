@@ -5,7 +5,6 @@ namespace App\Discount;
 
 
 use App\Book\Book;
-use App\Publisher\Publisher;
 
 class DiscountRulePackage
 {
@@ -16,10 +15,10 @@ class DiscountRulePackage
      *
      * @param Book[] $books
      * @param Discount $discount
-     * @param Discount[] $relatedDiscounts
+     * @param $relatedDiscountsMap
      * @return int
      */
-    public function getDiscountPrice(array $books, Discount $discount,  $relatedDiscounts)
+    public function getDiscountPrice(array $books, Discount $discount, \SplObjectStorage $relatedDiscountsMap)
     {
         $discountPrice = 0;
         $numberOfDiscount = count($books) / $discount->amount1;
@@ -53,12 +52,12 @@ class DiscountRulePackage
 
                 $book = array_pop($books);
 
-                foreach ($relatedDiscounts as $relatedDiscount) {
+                foreach ($relatedDiscountsMap as $relatedDiscount) {
 
-                    $discountType = $relatedDiscount->discountType;
+                    $discountType=$relatedDiscountsMap[$relatedDiscount];
                     $rule = $discountType->getDiscountRule();
                     $bookDiscountPrice = $rule->getDiscountPrice($book, $relatedDiscount);
-                    $discountPrice+=$bookDiscountPrice;
+                    $discountPrice += $bookDiscountPrice;
                 }
             }
         }

@@ -16,4 +16,16 @@ interface IDiscountRepository
     public function assignPublisher(Discount $discount, Publisher $publisher);
 
     public function assignRelatedDiscount(Discount $discount, Discount $relatedDiscount);
+
+    public function findAllByBook(Book $book);
+
+    public function findAllByPublisher(Publisher $publisher);
+
+    /**
+     * @param Discount $discount
+     * @return DiscountType
+     */
+    public function getDiscountType(Discount $discount);
+
+    public function getRelatedDiscounts(Discount $discount);
 }

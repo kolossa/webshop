@@ -2,22 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5cf30775-83ce-48d9-8440-2312371be5fe" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/Cart/CartFactory.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Cart/CartPriceService.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Cart/CartService.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Cart/EloquentCartRepository.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Cart/ICartRepository.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/js/book.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/js/cart.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/cart.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Book/BookPriceService.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Book/BookPriceService.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Book/EloquentBookRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Book/EloquentBookRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Book/IBookRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Book/IBookRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Cart/CartPriceService.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Cart/CartPriceService.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Discount/Discount.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Discount/Discount.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Discount/DiscountRulePackage.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Discount/DiscountRulePackage.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Discount/DiscountType.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Discount/DiscountType.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/GetBooksController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/GetBooksController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Providers/AppServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/AppServiceProvider.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/books/list.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/books/list.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Discount/EloquentDiscountRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Discount/EloquentDiscountRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Discount/IDiscountRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Discount/IDiscountRepository.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -179,7 +172,8 @@
       <updated>1579339024576</updated>
       <workItem from="1579339040014" duration="930000" />
       <workItem from="1579340142425" duration="25113000" />
-      <workItem from="1579419482134" duration="23186000" />
+      <workItem from="1579419482134" duration="23187000" />
+      <workItem from="1579544288552" duration="7522000" />
     </task>
     <servers />
   </component>
@@ -197,10 +191,10 @@
     </option>
   </component>
   <component name="WindowStateProjectService">
-    <state x="1011" y="247" key="#com.intellij.ide.util.MemberChooser" timestamp="1579452829385">
+    <state x="1011" y="247" key="#com.intellij.ide.util.MemberChooser" timestamp="1579550969683">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="1011" y="247" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1579452829385" />
+    <state x="1011" y="247" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1579550969683" />
     <state x="224" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1579364263849">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -229,17 +223,17 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="92" y="92" width="1736" height="856" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1579353271538" />
-    <state x="655" y="342" key="com.intellij.ide.util.TipDialog" timestamp="1579419582676">
+    <state x="655" y="342" key="com.intellij.ide.util.TipDialog" timestamp="1579545006679">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="655" y="342" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1579419582676" />
+    <state x="655" y="342" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1579545006679" />
     <state x="607" y="134" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1579351575215">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="607" y="134" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1579351575215" />
-    <state x="657" y="118" width="606" height="804" key="find.popup" timestamp="1579350509654">
+    <state x="657" y="118" width="606" height="804" key="find.popup" timestamp="1579553057365">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="657" y="118" width="606" height="804" key="find.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1579350509654" />
+    <state x="657" y="118" width="606" height="804" key="find.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1579553057365" />
   </component>
 </project>
