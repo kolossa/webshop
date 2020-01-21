@@ -9,7 +9,7 @@ Big Fish webshop próbafeladat
 
 	git clone https://github.com/kolossa/webshop.git
 
-# 3. 
+# 3. run composer
 
 	composer install
 
@@ -21,3 +21,16 @@ Big Fish webshop próbafeladat
 
 	php artisan books:install
 	php artisan discounts:install
+	
+# 6. run key generator: 
+
+    php artisan key:generate
+    
+# 7. set the .env file
+
+    Create your .env file.
+    Use the .env.example and set your database.
+    
+# 8. open your browser
+
+    your/path/list-books
