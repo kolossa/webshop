@@ -2,17 +2,32 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5cf30775-83ce-48d9-8440-2312371be5fe" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Author/Author.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Author/Author.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Author/AuthorFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Author/AuthorFactory.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Author/EloquentAuthorRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Author/EloquentAuthorRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Author/IAuthorRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Author/IAuthorRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Book/Book.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Book/Book.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Book/BookFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Book/BookFactory.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Book/BookPriceService.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Book/BookPriceService.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Book/EloquentBookRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Book/EloquentBookRepository.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Book/IBookRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Book/IBookRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Cart/CartPriceService.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Cart/CartPriceService.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Cart/Cart.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Cart/Cart.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Cart/CartFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Cart/CartFactory.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Cart/CartService.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Cart/CartService.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Cart/EloquentCartRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Cart/EloquentCartRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Cart/ICartRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Cart/ICartRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Console/Commands/UploadBooks.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Console/Commands/UploadBooks.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Discount/Discount.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Discount/Discount.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Discount/DiscountFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Discount/DiscountFactory.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Discount/DiscountRulePackage.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Discount/DiscountRulePackage.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Discount/DiscountType.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Discount/DiscountType.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Discount/DiscountTypeFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Discount/DiscountTypeFactory.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Discount/EloquentDiscountRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Discount/EloquentDiscountRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Discount/EloquentDiscountTypeRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Discount/EloquentDiscountTypeRepository.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Discount/IDiscountRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Discount/IDiscountRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Discount/IDiscountRule.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Discount/IDiscountRule.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Discount/IDiscountTypeRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Discount/IDiscountTypeRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Publisher/EloquentPublisherRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Publisher/EloquentPublisherRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Publisher/IPublisherRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Publisher/IPublisherRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/GetBooksController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/GetBooksController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ListBooksController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ListBooksController.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -177,7 +192,7 @@
       <workItem from="1579419482134" duration="23187000" />
       <workItem from="1579544288552" duration="12012000" />
       <workItem from="1579633946666" duration="698000" />
-      <workItem from="1579634689789" duration="640000" />
+      <workItem from="1579634689789" duration="1339000" />
     </task>
     <servers />
   </component>

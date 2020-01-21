@@ -4,6 +4,10 @@ namespace App\Author;
 
 use Illuminate\Database\Eloquent\Model;
 
+/**
+ * Class Author
+ * @package App\Author
+ */
 class Author extends Model implements \App\IEntity
 {
     /**
@@ -12,9 +16,10 @@ class Author extends Model implements \App\IEntity
      * @var string
      */
     protected $table = 'authors';
-	
-	public function getId(){
-		
-		return $this->id;
-	}
+
+    public function getId()
+    {
+
+        return $this->id;
+    }
 }

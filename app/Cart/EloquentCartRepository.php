@@ -6,6 +6,10 @@ namespace App\Cart;
 
 use App\Book\Book;
 
+/**
+ * Class EloquentCartRepository
+ * @package App\Cart
+ */
 class EloquentCartRepository implements ICartRepository
 {
     public function persist(Cart $cart)

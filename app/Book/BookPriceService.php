@@ -7,6 +7,12 @@ namespace App\Book;
 use App\Discount\IDiscountRepository;
 use App\Discount\IDiscountTypeRepository;
 
+/**
+ * This class calculate the special price of a book.
+ *
+ * Class BookPriceService
+ * @package App\Book
+ */
 class BookPriceService
 {
 

@@ -7,6 +7,10 @@ namespace App\Discount;
 use App\Book\Book;
 use App\Publisher\Publisher;
 
+/**
+ * Class EloquentDiscountRepository
+ * @package App\Discount
+ */
 class EloquentDiscountRepository implements IDiscountRepository
 {
     public function persist(\App\IEntity $entity)

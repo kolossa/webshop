@@ -10,8 +10,12 @@ use \App\Publisher\PublisherFactory;
 use \App\Publisher\Publisher;
 use \App\Author\IAuthorRepository;
 use \App\Author\AuthorFactory;
-use \App\Author\Author;
 
+
+/**
+ * Class UploadBooks
+ * @package App\Console\Commands
+ */
 class UploadBooks extends Command
 {
     /**

@@ -20,22 +20,22 @@ class DiscountRulePackage
      */
     public function getDiscountPrice(array $books, Discount $discount, \SplObjectStorage $relatedDiscountsMap)
     {
-        if(count($books)==0){
+        if (count($books) == 0) {
             return 0;
         }
 
-        $publisherCheck=[];
-        foreach ($books as $book){
-            $publisherCheck[$book->publisher_id]=$book->publisher_id;
+        $publisherCheck = [];
+        foreach ($books as $book) {
+            $publisherCheck[$book->publisher_id] = $book->publisher_id;
         }
 
-        if(count($publisherCheck)>1){
+        if (count($publisherCheck) > 1) {
             throw new \BadMethodCallException('Books must be assigned with the same publisher!');
         }
-		
-		if($relatedDiscountsMap->count()==0){
-			throw new \BadMethodCallException('There are not any discount rule!');
-		}
+
+        if ($relatedDiscountsMap->count() == 0) {
+            throw new \BadMethodCallException('There are not any discount rule!');
+        }
 
         $discountPrice = 0;
         $numberOfDiscount = count($books) / $discount->amount1;
@@ -71,7 +71,7 @@ class DiscountRulePackage
 
                 foreach ($relatedDiscountsMap as $relatedDiscount) {
 
-                    $discountType=$relatedDiscountsMap[$relatedDiscount];
+                    $discountType = $relatedDiscountsMap[$relatedDiscount];
                     $rule = $discountType->getDiscountRule();
                     $bookDiscountPrice = $rule->getDiscountPrice($book, $relatedDiscount);
                     $discountPrice += $bookDiscountPrice;

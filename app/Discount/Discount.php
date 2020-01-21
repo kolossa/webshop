@@ -6,11 +6,15 @@ namespace App\Discount;
 
 use Illuminate\Database\Eloquent\Model;
 
+/**
+ * Class Discount
+ * @package App\Discount
+ */
 class Discount extends Model implements \App\IEntity
 {
-    const TABLE_BOOKS_ASSIGN='discounts_books_assign';
-    const TABLE_PUBLISHERS_ASSIGN='discounts_publishers_assign';
-    const TABLE_DISCOUNTS_ASSIGN='discounts_assign';
+    const TABLE_BOOKS_ASSIGN = 'discounts_books_assign';
+    const TABLE_PUBLISHERS_ASSIGN = 'discounts_publishers_assign';
+    const TABLE_DISCOUNTS_ASSIGN = 'discounts_assign';
 
     /**
      * The table associated with the model.

@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Book\BookPriceService;
-use Illuminate\Http\Request;
 use \App\Book\IBookRepository;
 
 class GetBooksController extends Controller

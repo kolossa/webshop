@@ -4,6 +4,10 @@ namespace App\Cart;
 
 use Illuminate\Database\Eloquent\Model;
 
+/**
+ * Class Cart
+ * @package App\Cart
+ */
 class Cart extends Model
 {
     /**

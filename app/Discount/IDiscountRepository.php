@@ -7,6 +7,10 @@ namespace App\Discount;
 use App\Book\Book;
 use App\Publisher\Publisher;
 
+/**
+ * Interface IDiscountRepository
+ * @package App\Discount
+ */
 interface IDiscountRepository
 {
     public function persist(\App\IEntity $entity);

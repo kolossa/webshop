@@ -2,6 +2,10 @@
 
 namespace App\Discount;
 
+/**
+ * Class DiscountTypeFactory
+ * @package App\Discount
+ */
 class DiscountTypeFactory
 {
 

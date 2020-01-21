@@ -6,6 +6,12 @@ namespace App\Cart;
 
 use App\Book\Book;
 
+/**
+ * This cart handles the content of a cart
+ *
+ * Class CartService
+ * @package App\Cart
+ */
 class CartService
 {
     /**

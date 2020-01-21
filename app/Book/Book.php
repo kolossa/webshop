@@ -4,6 +4,10 @@ namespace App\Book;
 
 use Illuminate\Database\Eloquent\Model;
 
+/**
+ * Class Book
+ * @package App\Book
+ */
 class Book extends Model implements \App\IEntity
 {
     /**
@@ -13,25 +17,29 @@ class Book extends Model implements \App\IEntity
      */
     protected $table = 'books';
 
-	public $incrementing = false;
+    public $incrementing = false;
 
-	public function getId(){
+    public function getId()
+    {
 
-		return $this->id;
-	}
+        return $this->id;
+    }
 
-	public function publisher(){
+    public function publisher()
+    {
 
-		return $this->belongsTo('App\Publisher\Publisher');
-	}
+        return $this->belongsTo('App\Publisher\Publisher');
+    }
 
-	public function authors(){
+    public function authors()
+    {
 
-		return $this->belongsToMany('App\Author\Author', 'authors_books_assign');
-	}
+        return $this->belongsToMany('App\Author\Author', 'authors_books_assign');
+    }
 
-	public function discounts(){
+    public function discounts()
+    {
 
-		return $this->belongsToMany('App\Discount\Discount', 'discounts_books_assign');
-	}
+        return $this->belongsToMany('App\Discount\Discount', 'discounts_books_assign');
+    }
 }

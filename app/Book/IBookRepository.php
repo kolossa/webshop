@@ -4,6 +4,10 @@ namespace App\Book;
 
 use App\Author\Author;
 
+/**
+ * Interface IBookRepository
+ * @package App\Book
+ */
 interface IBookRepository
 {
 

@@ -3,8 +3,11 @@
 namespace App\Book;
 
 use App\Author\Author;
-use App\Publisher\Publisher;
 
+/**
+ * Class EloquentBookRepository
+ * @package App\Book
+ */
 class EloquentBookRepository implements IBookRepository
 {
 

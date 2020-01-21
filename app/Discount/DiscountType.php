@@ -6,6 +6,10 @@ namespace App\Discount;
 
 use Illuminate\Database\Eloquent\Model;
 
+/**
+ * Class DiscountType
+ * @package App\Discount
+ */
 class DiscountType extends Model implements \App\IEntity
 {
     const TYPE_PERCENTAGE = 'percentage';

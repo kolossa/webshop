@@ -2,9 +2,10 @@
 
 namespace App\Discount;
 
-use App\Publisher\Publisher;
-use App\Book\Book;
-
+/**
+ * Interface IDiscountTypeRepository
+ * @package App\Discount
+ */
 interface IDiscountTypeRepository
 {
 
