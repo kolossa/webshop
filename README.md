@@ -5,19 +5,19 @@ Big Fish webshop próbafeladat
 
 	CREATE DATABASE webshop;
 
-#2.  Clone project
+# 2.  Clone project
 
 	git clone https://github.com/kolossa/webshop.git
 
-#3. 
+# 3. 
 
 	composer install
 
-#3. migration: 
+# 4. migration: 
 
 	php artisan migrate
 
-#4. install test data:
+# 5. install test data:
 
 	php artisan books:install
 	php artisan discounts:install
