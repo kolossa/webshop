@@ -32,6 +32,10 @@ class DiscountRulePackage
         if(count($publisherCheck)>1){
             throw new \BadMethodCallException('Books must be assigned with the same publisher!');
         }
+		
+		if($relatedDiscountsMap->count()==0){
+			throw new \BadMethodCallException('There are not any discount rule!');
+		}
 
         $discountPrice = 0;
         $numberOfDiscount = count($books) / $discount->amount1;
