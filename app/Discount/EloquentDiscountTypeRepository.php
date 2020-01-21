@@ -20,4 +20,9 @@ class EloquentDiscountTypeRepository implements IDiscountTypeRepository
 
         return DiscountType::find($id);
     }
+
+    public function getDiscountTypeByDiscount(Discount $discount)
+    {
+        return DiscountType::where('id', $discount->discount_type_id)->first();
+    }
 }

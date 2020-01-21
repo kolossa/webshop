@@ -41,9 +41,4 @@ class EloquentBookRepository implements IBookRepository
             ->limit($limit)
             ->get();
     }
-
-    public function getPublisher(Book $book)
-    {
-        return Publisher::where('id', $book->publisher_id)->first();
-    }
 }

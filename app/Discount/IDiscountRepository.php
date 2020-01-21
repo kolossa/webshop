@@ -21,11 +21,5 @@ interface IDiscountRepository
 
     public function findAllByPublisher(Publisher $publisher);
 
-    /**
-     * @param Discount $discount
-     * @return DiscountType
-     */
-    public function getDiscountType(Discount $discount);
-
     public function getRelatedDiscounts(Discount $discount);
 }

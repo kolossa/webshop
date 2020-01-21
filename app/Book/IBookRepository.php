@@ -16,6 +16,4 @@ interface IBookRepository
     public function findByPk($id);
 
     public function findAllWithPublisherAndAuthors($offset, $limit, $order, $asc = true);
-
-    public function getPublisher(Book $book);
 }

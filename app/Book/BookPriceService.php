@@ -5,6 +5,7 @@ namespace App\Book;
 
 
 use App\Discount\IDiscountRepository;
+use App\Discount\IDiscountTypeRepository;
 
 class BookPriceService
 {
@@ -15,12 +16,19 @@ class BookPriceService
     protected $discountRepository;
 
     /**
+     * @var IDiscountTypeRepository $discountTypeRepository
+     */
+    protected $discountTypeRepository;
+
+    /**
      * BookPriceService constructor.
      * @param IDiscountRepository $discountRepository
+     * @param IDiscountTypeRepository $discountTypeRepository
      */
-    public function __construct(IDiscountRepository $discountRepository)
+    public function __construct(IDiscountRepository $discountRepository, IDiscountTypeRepository $discountTypeRepository)
     {
         $this->discountRepository = $discountRepository;
+        $this->discountTypeRepository = $discountTypeRepository;
     }
 
 
@@ -32,7 +40,7 @@ class BookPriceService
 
         foreach ($discounts as $discount) {
 
-            $discountType = $this->discountRepository->getDiscountType($discount);
+            $discountType = $this->discountTypeRepository->getDiscountTypeByDiscount($discount);
             $rule = $discountType->getDiscountRule();
             $discountPrice = $rule->getDiscountPrice($book, $discount);
 

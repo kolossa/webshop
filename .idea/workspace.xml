@@ -1,7 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5cf30775-83ce-48d9-8440-2312371be5fe" name="Default Changelist" comment="" />
+    <list default="true" id="5cf30775-83ce-48d9-8440-2312371be5fe" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Book/BookPriceService.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Book/BookPriceService.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Book/EloquentBookRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Book/EloquentBookRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Book/IBookRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Book/IBookRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Cart/CartPriceService.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Cart/CartPriceService.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Discount/EloquentDiscountRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Discount/EloquentDiscountRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Discount/EloquentDiscountTypeRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Discount/EloquentDiscountTypeRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Discount/IDiscountRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Discount/IDiscountRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Discount/IDiscountTypeRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Discount/IDiscountTypeRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Publisher/EloquentPublisherRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Publisher/EloquentPublisherRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Publisher/IPublisherRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Publisher/IPublisherRepository.php" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -164,6 +176,8 @@
       <workItem from="1579340142425" duration="25113000" />
       <workItem from="1579419482134" duration="23187000" />
       <workItem from="1579544288552" duration="12012000" />
+      <workItem from="1579633946666" duration="698000" />
+      <workItem from="1579634689789" duration="640000" />
     </task>
     <servers />
   </component>
@@ -189,10 +203,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="224" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1579364263849" />
-    <state x="690" y="274" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1579453866178">
+    <state x="690" y="274" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1579634339044">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="690" y="274" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1579453866178" />
+    <state x="690" y="274" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1579634339044" />
     <state x="740" y="274" key="FileChooserDialogImpl" timestamp="1579343874574">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -213,17 +227,17 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="92" y="92" width="1736" height="856" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1579353271538" />
-    <state x="655" y="342" key="com.intellij.ide.util.TipDialog" timestamp="1579545006679">
+    <state x="655" y="342" key="com.intellij.ide.util.TipDialog" timestamp="1579634720577">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="655" y="342" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1579545006679" />
+    <state x="655" y="342" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1579634720577" />
     <state x="607" y="134" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1579351575215">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="607" y="134" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1579351575215" />
-    <state x="657" y="118" width="606" height="804" key="find.popup" timestamp="1579553057365">
+    <state x="657" y="118" width="606" height="804" key="find.popup" timestamp="1579634956903">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="657" y="118" width="606" height="804" key="find.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1579553057365" />
+    <state x="657" y="118" width="606" height="804" key="find.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1579634956903" />
   </component>
 </project>

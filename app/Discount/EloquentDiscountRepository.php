@@ -50,15 +50,6 @@ class EloquentDiscountRepository implements IDiscountRepository
             ->get();
     }
 
-    /**
-     * @inheritDoc
-     */
-    public function getDiscountType(Discount $discount)
-    {
-
-        return DiscountType::where('id', $discount->discount_type_id)->first();
-    }
-
     public function getRelatedDiscounts(Discount $discount)
     {
         return Discount::select('discounts.*')
