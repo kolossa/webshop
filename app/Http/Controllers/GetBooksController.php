@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Book\Book;
 use App\Book\BookPriceService;
 use \App\Book\IBookRepository;
 
@@ -33,6 +34,10 @@ class GetBooksController extends Controller
     {
         $result = [];
 
+        $bookColumns=Book::getColumns();
+        if(!in_array($column, $bookColumns)){
+            throw new \BadMethodCallException('This order is not acceptable!');
+        }
         $books = $this->bookRepository->findAllWithPublisherAndAuthors((int)$offset, (int)$limit, $column, (bool)$asc);
 
         foreach ($books as $book) {

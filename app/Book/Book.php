@@ -42,4 +42,21 @@ class Book extends Model implements \App\IEntity
 
         return $this->belongsToMany('App\Discount\Discount', 'discounts_books_assign');
     }
+
+    public function getColumnsFromDatabase()
+    {
+        return \Schema::getColumnListing($this->table);
+    }
+
+    protected static $columns=null;
+
+    public static function getColumns()
+    {
+        if(self::$columns==null){
+            $new=new self();
+            self::$columns=$new->getColumnsFromDatabase();
+        }
+
+        return self::$columns;
+    }
 }
